@@ -15,7 +15,7 @@ import java.util.List;
  * Provides endpoints to manage address book data.
  */
 @RestController
-@RequestMapping("/api/addressbook")     // Base URL for Address Book API
+@RequestMapping("api/addressbook")     // Base URL for Address Book API
 public class AddressBookController {
 
     // AddressBookService instance to perform CRUD operations on address book data.
@@ -38,9 +38,15 @@ public class AddressBookController {
 
     /**
      * Endpoint to get a specific address book entry by ID.
-     * @param id - The ID of the address book entry
+     * @param  - The ID of the address book entry
      * @return ResponseEntity with AddressBookDTO which contains the address book entry
      */
+
+    @GetMapping("/test")
+    public String testController() {
+        return "AddressBook API is working";
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<ResponseDTO<?>> getContactById(@PathVariable Long id) {
         try {
@@ -56,7 +62,7 @@ public class AddressBookController {
      * @param AddressBookDTO - The address book entry to be added
      * @return ResponseEntity with created AddressBookDTO
      */
-    @PostMapping("")
+    @PostMapping()
     public ResponseEntity<ResponseDTO<?>> addInAddressBook(@RequestBody AddressBookDTO AddressBookDTO) {
         try {
             AddressBookDTO newAddressBook = addressBookService.createAddressBookData(AddressBookDTO);

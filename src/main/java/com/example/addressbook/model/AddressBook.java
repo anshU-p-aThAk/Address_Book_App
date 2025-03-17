@@ -33,5 +33,5 @@ public class AddressBook {
 
     private String address;
 
-    private long phoneNumber;
+    private String phoneNumber;
 }

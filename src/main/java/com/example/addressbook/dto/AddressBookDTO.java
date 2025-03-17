@@ -43,5 +43,5 @@ public class AddressBookDTO {
 
     @NotNull(message = "Phone number is required")
     @Pattern(regexp = "^[6-9][0-9]{9}$", message = "Phone number must be 10 digits long")
-    private long phoneNumber;
+    private String phoneNumber;
 }
